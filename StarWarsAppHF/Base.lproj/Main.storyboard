@@ -1,24 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ayM-8b-HQm">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--people-->
+        <scene sceneID="J1Y-Aw-29P">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="people" id="nUp-5v-QbW" customClass="CharactersController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlY-gQ-Y5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-ho-heZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srZ-wk-bYJ">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="characterCell" id="2W5-Xj-nI0">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2W5-Xj-nI0" id="LIK-uk-Ta0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Cqf-F6-7JL" kind="show" id="BB7-NF-pev"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92965084310000001" green="0.710347116" blue="0.27829027179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="N5S-ho-heZ" firstAttribute="top" secondItem="QIj-ak-Q0A" secondAttribute="top" id="2MV-Ms-zyQ"/>
+                            <constraint firstItem="srZ-wk-bYJ" firstAttribute="leading" secondItem="QIj-ak-Q0A" secondAttribute="leading" id="JKC-ue-ZXf"/>
+                            <constraint firstItem="srZ-wk-bYJ" firstAttribute="bottom" secondItem="QIj-ak-Q0A" secondAttribute="bottom" id="LMZ-Kt-VoS"/>
+                            <constraint firstItem="N5S-ho-heZ" firstAttribute="trailing" secondItem="QIj-ak-Q0A" secondAttribute="trailing" id="jLn-u2-pID"/>
+                            <constraint firstItem="srZ-wk-bYJ" firstAttribute="trailing" secondItem="QIj-ak-Q0A" secondAttribute="trailing" id="nT9-yE-5Y4"/>
+                            <constraint firstItem="N5S-ho-heZ" firstAttribute="leading" secondItem="QIj-ak-Q0A" secondAttribute="leading" id="sty-Ch-GhE"/>
+                            <constraint firstItem="srZ-wk-bYJ" firstAttribute="top" secondItem="N5S-ho-heZ" secondAttribute="bottom" id="yqG-EJ-GBr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QIj-ak-Q0A"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="People" id="gsm-gZ-OXd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRD-dU-mLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="-185.49107142857142"/>
+        </scene>
+        <!--Character Detailed Controller-->
+        <scene sceneID="VhU-St-q8U">
+            <objects>
+                <viewController id="Cqf-F6-7JL" customClass="CharacterDetailedController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xw6-uw-1Fn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="m0x-5a-TPH"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzf-JO-WLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2111" y="-185"/>
+        </scene>
+        <!--planets-->
+        <scene sceneID="x1y-aP-l5J">
+            <objects>
+                <viewController title="planets" id="c9Z-d9-r3k" customClass="PlanetsController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uks-P4-ELG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bmJ-RF-Ppk">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="planetCell" id="w1e-31-SLw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w1e-31-SLw" id="V35-dF-k0N">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ogf-Zq-8BB" kind="show" id="gWQ-as-iCK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-33-b7T">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62430870530000004" green="0.68206226830000005" blue="0.69804304839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="VJf-33-b7T" firstAttribute="top" secondItem="DkH-yI-W1x" secondAttribute="top" id="0gv-iT-YRO"/>
+                            <constraint firstItem="VJf-33-b7T" firstAttribute="trailing" secondItem="DkH-yI-W1x" secondAttribute="trailing" id="IA8-Xp-9Mq"/>
+                            <constraint firstItem="bmJ-RF-Ppk" firstAttribute="top" secondItem="VJf-33-b7T" secondAttribute="bottom" id="LUl-ih-1Vv"/>
+                            <constraint firstItem="bmJ-RF-Ppk" firstAttribute="trailing" secondItem="DkH-yI-W1x" secondAttribute="trailing" id="PJx-6I-LiI"/>
+                            <constraint firstItem="VJf-33-b7T" firstAttribute="leading" secondItem="DkH-yI-W1x" secondAttribute="leading" id="YRp-qi-fBn"/>
+                            <constraint firstItem="bmJ-RF-Ppk" firstAttribute="bottom" secondItem="DkH-yI-W1x" secondAttribute="bottom" id="j6T-dG-GZ4"/>
+                            <constraint firstItem="bmJ-RF-Ppk" firstAttribute="leading" secondItem="DkH-yI-W1x" secondAttribute="leading" id="wtw-2c-fhS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DkH-yI-W1x"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Planets" id="1Zq-zy-K7V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U83-In-eVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="658"/>
+        </scene>
+        <!--Planet Detailed Controller-->
+        <scene sceneID="cga-cl-mOF">
+            <objects>
+                <viewController id="Ogf-Zq-8BB" customClass="PlanetDetailedController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6mf-dc-ZKq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M9j-Jo-e5p"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2uC-kz-BUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2035" y="658"/>
+        </scene>
+        <!--movies-->
+        <scene sceneID="iqw-s7-xpa">
+            <objects>
+                <viewController title="movies" id="dCM-O0-cW8" customClass="MoviesController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M43-cd-Jk9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-cE-YyS" customClass="MovieCollectionView" customModule="StarWarsAppHF" customModuleProvider="target">
+                                <rect key="frame" x="20" y="60" width="374" height="737"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qtc-al-Sqb">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sGH-Nd-A3k" customClass="MovieCell" customModule="StarWarsAppHF" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="RlB-gT-Mx9" kind="show" id="hXr-81-koF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18619802590000001" green="0.26564508679999999" blue="0.32157701249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ihR-cE-YyS" firstAttribute="leading" secondItem="U6C-wi-NHy" secondAttribute="leading" constant="20" id="1xh-Oo-r2v"/>
+                            <constraint firstItem="U6C-wi-NHy" firstAttribute="trailing" secondItem="ihR-cE-YyS" secondAttribute="trailing" constant="20" id="MAc-e2-9Dm"/>
+                            <constraint firstItem="ihR-cE-YyS" firstAttribute="top" secondItem="U6C-wi-NHy" secondAttribute="top" constant="16" id="wtn-q3-RBW"/>
+                            <constraint firstItem="U6C-wi-NHy" firstAttribute="bottom" secondItem="ihR-cE-YyS" secondAttribute="bottom" constant="16" id="zpo-HR-Ext"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U6C-wi-NHy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" id="DjG-0r-PJE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9WA-8U-qSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="-929.46428571428567"/>
+        </scene>
+        <!--Movie Detailed Controller-->
+        <scene sceneID="lAJ-PJ-mrh">
+            <objects>
+                <viewController id="RlB-gT-Mx9" customClass="MovieDetailedController" customModule="StarWarsAppHF" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2n2-6B-x0v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tAq-6L-u94"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RqH-rE-m8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="-929"/>
+        </scene>
+        <!--startWarsBar-->
+        <scene sceneID="09I-E4-1MA">
+            <objects>
+                <tabBarController title="startWarsBar" id="ayM-8b-HQm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gcr-W1-H7g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dCM-O0-cW8" kind="relationship" relationship="viewControllers" id="xy3-e9-8CL"/>
+                        <segue destination="nUp-5v-QbW" kind="relationship" relationship="viewControllers" id="2GB-nv-9qr"/>
+                        <segue destination="c9Z-d9-r3k" kind="relationship" relationship="viewControllers" id="xro-Sm-sn6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="os6-cG-TfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-261" y="-351"/>
         </scene>
     </scenes>
 </document>
