@@ -152,7 +152,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-cE-YyS" customClass="MovieCollectionView" customModule="StarWarsAppHF" customModuleProvider="target">
                                 <rect key="frame" x="20" y="59" width="374" height="737"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.18619802590000001" green="0.26564508679999999" blue="0.32157701249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qtc-al-Sqb">
                                     <size key="itemSize" width="241" height="296"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -221,13 +221,39 @@
                     <view key="view" contentMode="scaleToFill" id="2n2-6B-x0v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wX5-ZE-3zt">
+                                <rect key="frame" x="41.5" y="92.5" width="331" height="358.5"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dT6-vf-sAs">
+                                <rect key="frame" x="65" y="456" width="284" height="425"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dT6-vf-sAs" firstAttribute="leading" secondItem="tAq-6L-u94" secondAttribute="leading" constant="65" id="667-82-ZYQ"/>
+                            <constraint firstItem="wX5-ZE-3zt" firstAttribute="height" secondItem="2n2-6B-x0v" secondAttribute="height" multiplier="0.4" id="6Od-9f-vfN"/>
+                            <constraint firstItem="dT6-vf-sAs" firstAttribute="top" secondItem="wX5-ZE-3zt" secondAttribute="bottom" constant="5" id="Lqt-cM-nd0"/>
+                            <constraint firstItem="wX5-ZE-3zt" firstAttribute="centerX" secondItem="tAq-6L-u94" secondAttribute="centerX" id="Tjv-EN-BAw"/>
+                            <constraint firstItem="wX5-ZE-3zt" firstAttribute="centerY" secondItem="tAq-6L-u94" secondAttribute="centerY" multiplier="0.6" id="c53-9L-orD"/>
+                            <constraint firstItem="tAq-6L-u94" firstAttribute="trailing" secondItem="dT6-vf-sAs" secondAttribute="trailing" constant="65" id="hF5-mb-czf"/>
+                            <constraint firstAttribute="bottom" secondItem="dT6-vf-sAs" secondAttribute="bottom" constant="15" id="lcI-44-MAV"/>
+                            <constraint firstItem="wX5-ZE-3zt" firstAttribute="width" secondItem="2n2-6B-x0v" secondAttribute="width" multiplier="0.8" id="pok-jx-6uw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tAq-6L-u94"/>
                     </view>
+                    <connections>
+                        <outlet property="movieDescription" destination="dT6-vf-sAs" id="S2p-4O-ITq"/>
+                        <outlet property="moviePoster" destination="wX5-ZE-3zt" id="b8I-9S-DmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqH-rE-m8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="-929"/>
+            <point key="canvasLocation" x="2034.7826086956522" y="-929.46428571428567"/>
         </scene>
         <!--startWarsBar-->
         <scene sceneID="09I-E4-1MA">

@@ -5,6 +5,7 @@ class MoviesController: UIViewController {
   @IBOutlet weak var moviesCollectionView: UICollectionView!
   
   let endPoint = StarWarsEndPoints.films.rawValue
+  
   var movies = [StarWarsMovie]() {
     didSet {
       DispatchQueue.main.async {
@@ -58,7 +59,7 @@ extension MoviesController: UICollectionViewDataSource {
     cell.movieName.text = currentMovie.title
     
     cell.layer.cornerRadius = 5.0
-    cell.layer.borderColor = #colorLiteral(red: 0.4309224188, green: 0.5425195694, blue: 0.6682616472, alpha: 1)
+    cell.layer.borderColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
     cell.layer.borderWidth = 1.0
     
     return cell
@@ -68,5 +69,17 @@ extension MoviesController: UICollectionViewDataSource {
 extension MoviesController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: 300, height: 300)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    let movieToSegue = movies[indexPath.row]
+    
+    let movieDetailedController = MovieDetailedController()
+    
+    movieDetailedController.currentMovie = movieToSegue
+    
+    navigationController?.pushViewController(movieDetailedController, animated: true)
+    
   }
 }
