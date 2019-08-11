@@ -24,18 +24,10 @@ class CharactersController: UIViewController {
     }
   }
   
-  //CALL DATA
-  //STORE IN ADDITIONAL VARIABLE
-  //CHECK IF THE IS A NEXT
-  //IF THERE IS MODIFY ENDPOINT
-  //MAKE ANOTHER CALL AND SORE DATA IN VARIABLE
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpTableViews()
     getCharacterData()
-    //    getMoreCharacters()
-    //    dump(storeCalledData)
   }
   
   func setUpTableViews() {
@@ -54,13 +46,10 @@ class CharactersController: UIViewController {
           self.storeCalledData.append(contentsOf: self.starwarsCharacters)
           self.pageNumber += 1
           self.isFetching = false
-
-          dump(data)
         }
       }
     }
   }
-  
 }
 
 extension CharactersController: UITableViewDelegate, UITableViewDataSource {
@@ -90,13 +79,8 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func fetchMoreCharacters() {
-      isFetching = true
-    
-    
-      self.getCharacterData()
-    
-    
+    isFetching = true
+    self.getCharacterData()
     self.characterTableView.reloadData()
   }
-  
 }

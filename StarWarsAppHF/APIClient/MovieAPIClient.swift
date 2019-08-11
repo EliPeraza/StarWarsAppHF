@@ -2,7 +2,7 @@ import Foundation
 
 struct MovieAPIClient{
   
-  static func getMovieInfo (keyword:String, completionHandler: @escaping (AppError?, [StarWarsMovie]?) -> Void) {
+  static func getMovieInfo (keyword:String, pageNumber: Int, completionHandler: @escaping (AppError?, [StarWarsMovie]?) -> Void) {
     let urlString = "https://swapi.co/api/\(keyword)/"
     
     guard let url = URL(string: urlString) else {
@@ -24,44 +24,3 @@ struct MovieAPIClient{
       }.resume()
   }
 }
-
-//  static func decodeData(endPoint: String, completionHandler: @escaping ([StarWarsMovie]?, AppError?) -> Void) {
-//    let url = "https://swapi.co/api/\(endPoint)/"
-//    NetworkHelper.shared.getStarWarsData(endPointURLString: url) { (data, appError) in
-//      if appError != nil {
-//       completionHandler(nil, AppError.badURL("Bad URL \(url)"))
-//      }
-//      if let data = data {
-//        do {
-//          let starWarsData = try JSONDecoder().decode(StarWarsMovie.MovieInfo.self, from: data)
-//          completionHandler(starWarsData.results, nil)
-//        } catch {
-//          completionHandler(nil, AppError.jsonDecodingError(error))
-//        }
-//      }
-//    }
-//  }
-//
-//
-//  static func decodeSearchData(endPoint: StarWarsEndPoints, searchKeyWord: String?, completionHandler: @escaping ([StarWarsMovie]?, AppError?) -> Void) {
-//    var url =  String()
-//    if let keyWord = searchKeyWord {
-//      url = "https://swapi.co/api/\(endPoint)/?search=\(keyWord)"
-//    } else {
-//      url = "https://swapi.co/api/\(endPoint)/"
-//    }
-//    NetworkHelper.shared.getStarWarsData(endPointURLString: url) { (data, appError) in
-//      if appError != nil {
-//        completionHandler(nil, AppError.badURL("Bad URL"))
-//      }
-//      if let data = data {
-//        do {
-//          let starWarsData = try JSONDecoder().decode(StarWarsMovie.MovieInfo.self, from: data)
-//          completionHandler(starWarsData.results, nil)
-//        } catch {
-//          completionHandler(nil, AppError.jsonDecodingError(error))
-//        }
-//      }
-//    }
-//  }
-//}

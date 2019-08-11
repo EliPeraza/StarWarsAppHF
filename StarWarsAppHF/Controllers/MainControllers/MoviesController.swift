@@ -5,7 +5,7 @@ class MoviesController: UIViewController {
   @IBOutlet weak var moviesCollectionView: UICollectionView!
   
   let endPoint = StarWarsEndPoints.films.rawValue
-  
+  var pageNumber = 1
   var movies = [StarWarsMovie]() {
     didSet {
       DispatchQueue.main.async {
@@ -17,28 +17,27 @@ class MoviesController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    moviesCollectionView.dataSource = self
-    moviesCollectionView.delegate = self
-    getMovieData()
     configureCollection()
+    getMovieData()
   }
   
   func getMovieData (){
-    MovieAPIClient.getMovieInfo(keyword: endPoint){(error, data) in
+    MovieAPIClient.getMovieInfo(keyword: endPoint, pageNumber: pageNumber){(error, data) in
       DispatchQueue.main.async {
         if let error = error{
           print(error)
         }
         if let data = data {
           self.movies = data
-          dump(self.movies)
+          self.pageNumber += 1
         }
       }
     }
   }
   
   func configureCollection(){
+    moviesCollectionView.dataSource = self
+    moviesCollectionView.delegate = self
     let layout = self.moviesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
     layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     layout.minimumInteritemSpacing = 5

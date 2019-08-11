@@ -14,6 +14,7 @@
 		1EA503E922FE6142006D2C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA503E722FE6142006D2C8D /* LaunchScreen.storyboard */; };
 		1EA503F422FE6142006D2C8D /* StarWarsAppHFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503F322FE6142006D2C8D /* StarWarsAppHFTests.swift */; };
 		1EA503FF22FE6142006D2C8D /* StarWarsAppHFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */; };
+		1ED658342300AA5E00AD2BC7 /* StarWarsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED658332300AA5E00AD2BC7 /* StarWarsAPIClient.swift */; };
 		1EDF5E6C22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6D22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6E22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
@@ -85,6 +86,7 @@
 		1EA503F522FE6142006D2C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EA503FA22FE6142006D2C8D /* StarWarsAppHFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsAppHFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAppHFUITests.swift; sourceTree = "<group>"; };
+		1ED658332300AA5E00AD2BC7 /* StarWarsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPIClient.swift; sourceTree = "<group>"; };
 		1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E7422FF3A1F00F4681D /* MoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				1EDF5E9C22FF42ED00F4681D /* MovieAPIClient.swift */,
 				1EDF5EA722FF798600F4681D /* CharacterAPIClient.swift */,
 				1EDF5EA922FF799200F4681D /* PlanetAPIClient.swift */,
+				1ED658332300AA5E00AD2BC7 /* StarWarsAPIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				1EDF5E8922FF3ADD00F4681D /* PlanetDetailedController.swift in Sources */,
 				1EDF5EA822FF798600F4681D /* CharacterAPIClient.swift in Sources */,
 				1EDF5E9722FF420700F4681D /* AppError.swift in Sources */,
+				1ED658342300AA5E00AD2BC7 /* StarWarsAPIClient.swift in Sources */,
 				1EA503DF22FE613F006D2C8D /* AppDelegate.swift in Sources */,
 				1EDF5EA422FF435E00F4681D /* Planet.swift in Sources */,
 				1EDF5E9D22FF42ED00F4681D /* MovieAPIClient.swift in Sources */,
