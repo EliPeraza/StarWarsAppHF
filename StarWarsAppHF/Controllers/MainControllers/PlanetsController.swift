@@ -1,30 +1,57 @@
-//
-//  PlanetsController.swift
-//  StarWarsAppHF
-//
-//  Created by Elizabeth Peraza  on 8/10/19.
-//  Copyright © 2019 Elizabeth Peraza . All rights reserved.
-//
-
 import UIKit
 
 class PlanetsController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
+  @IBOutlet weak var planetsTableView: UITableView!
+  
+  let endPoint = StarWarsEndPoints.planets.rawValue
+  var starwarsPlanets = [StarWarsPlanet]() {
+    didSet {
+      DispatchQueue.main.async {
+        self.planetsTableView.reloadData()
+      }
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    planetsTableView.delegate = self
+    planetsTableView.dataSource = self
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    getPlanetData()
+  }
+  
+  func getPlanetData (){
+    PlanetAPIClient.getPlanetInfo(keyword: endPoint){(error, data) in
+      DispatchQueue.main.async {
+        if let error = error{
+          print(error)
+        }
+        if let data = data {
+          self.starwarsPlanets = data
+          dump(self.starwarsPlanets)
+        }
+      }
     }
-    */
+  }
+  
+}
+
+extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return starwarsPlanets.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = planetsTableView.dequeueReusableCell(withIdentifier: "PlanetCell", for: indexPath)
+    
+    let currentCharacter = starwarsPlanets[indexPath.row]
+    
+    cell.textLabel?.text = currentCharacter.name
+    
+    return cell
+    
+  }
+  
 
 }
