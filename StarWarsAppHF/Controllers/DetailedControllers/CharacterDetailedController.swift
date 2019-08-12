@@ -39,14 +39,7 @@ class CharacterDetailedController: UIViewController {
     let date  = currentCharacter.created.date()
     createdOnLabel.text = "Database entry created on: \(date)"
   }
-  
-//  func findHomeWorld(arrayOfPlanet: [StarWarsPlanet.PlanetInfo], urlString: String) -> String {
-//    var planetName = ""
-//    for planet in arrayOfPlanet {
-//      print(planet)
-//    }
-//    return planetName
-//  }
+
 }
 
 extension CharacterDetailedController: UITableViewDelegate, UITableViewDataSource {

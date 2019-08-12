@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1EA503DF22FE613F006D2C8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503DE22FE613F006D2C8D /* AppDelegate.swift */; };
-		1EA503E122FE613F006D2C8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503E022FE613F006D2C8D /* ViewController.swift */; };
 		1EA503E422FE613F006D2C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA503E222FE613F006D2C8D /* Main.storyboard */; };
 		1EA503E622FE6142006D2C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA503E522FE6142006D2C8D /* Assets.xcassets */; };
 		1EA503E922FE6142006D2C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA503E722FE6142006D2C8D /* LaunchScreen.storyboard */; };
@@ -78,7 +77,6 @@
 		1AC9B8EDD988498003CD80E3 /* Pods-StarWarsAppHF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsAppHF.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsAppHF/Pods-StarWarsAppHF.debug.xcconfig"; sourceTree = "<group>"; };
 		1EA503DB22FE613F006D2C8D /* StarWarsAppHF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsAppHF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA503DE22FE613F006D2C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1EA503E022FE613F006D2C8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1EA503E322FE613F006D2C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EA503E522FE6142006D2C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EA503E822FE6142006D2C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		1EDF5E9122FF3F6B00F4681D /* MainControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1EA503E022FE613F006D2C8D /* ViewController.swift */,
 				1EDF5E7422FF3A1F00F4681D /* MoviesController.swift */,
 				1EDF5E7822FF3A5800F4681D /* CharactersController.swift */,
 				1EDF5E7C22FF3A7600F4681D /* PlanetsController.swift */,
@@ -560,7 +557,6 @@
 				1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */,
 				1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */,
 				1EDF5E8122FF3AB000F4681D /* MovieDetailedController.swift in Sources */,
-				1EA503E122FE613F006D2C8D /* ViewController.swift in Sources */,
 				1EDF5E7D22FF3A7600F4681D /* PlanetsController.swift in Sources */,
 				1EDF5E7922FF3A5800F4681D /* CharactersController.swift in Sources */,
 				1EDF5EAA22FF799200F4681D /* PlanetAPIClient.swift in Sources */,
