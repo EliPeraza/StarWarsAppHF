@@ -4,6 +4,9 @@ class CharactersController: UIViewController {
   
   @IBOutlet weak var characterTableView: UITableView!
   
+  @IBOutlet weak var logo: UIImageView!
+  
+  
   var pageNumber = 1
   var isFetching = false
   let endPoint = StarWarsEndPoints.people.rawValue
@@ -28,12 +31,17 @@ class CharactersController: UIViewController {
     super.viewDidLoad()
     setUpTableViews()
     getCharacterData()
+    setupUI()
   }
   
   func setUpTableViews() {
     characterTableView.delegate = self
     characterTableView.dataSource = self
     characterTableView.backgroundColor = .black
+  }
+  
+  func setupUI(){
+    logo.image = UIImage(named: "starWarsNewLogo")
   }
   
   func getCharacterData (){
@@ -52,13 +60,13 @@ class CharactersController: UIViewController {
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let indexPath = characterTableView.indexPathForSelectedRow,
-      let detailedPoepleController = segue.destination as? CharacterDetailedController else {fatalError("Error with segue")}
-    
-    let currentMovie = storeCalledData[indexPath.row]
-    detailedPoepleController.currentCharacter = currentMovie
-  }
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    guard let indexPath = characterTableView.indexPathForSelectedRow,
+//      let detailedPoepleController = segue.destination as? CharacterDetailedController else {fatalError("Error with segue")}
+//
+//    let currentMovie = storeCalledData[indexPath.row]
+//    detailedPoepleController.currentCharacter = currentMovie
+//  }
   
 }
 
@@ -94,5 +102,16 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
     isFetching = true
     self.getCharacterData()
     self.characterTableView.reloadData()
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+      guard let detailedCharacterController = storyboard.instantiateViewController(withIdentifier: "CharacterDetailedController") as? CharacterDetailedController else {return}
+      
+      detailedCharacterController.modalPresentationStyle = .overCurrentContext
+    detailedCharacterController.currentCharacter = storeCalledData[indexPath.row]
+      present(detailedCharacterController, animated: true, completion: nil)
+      
+    
   }
 }

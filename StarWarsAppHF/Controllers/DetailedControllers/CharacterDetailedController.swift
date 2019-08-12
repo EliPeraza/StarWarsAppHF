@@ -3,10 +3,19 @@ import UIKit
 class CharacterDetailedController: UIViewController {
   
   public var currentCharacter: StarWarsCharacter!
+  let endPoint = StarWarsEndPoints.films.rawValue
+  var pageNumber = 1
+  var movies = [StarWarsMovie]() {
+    didSet {
+      DispatchQueue.main.async {
+        self.moviesCollectionView.reloadData()
+      }
+    }
+  }
+  
+  @IBOutlet weak var backGroundImage: UIImageView!
   
   @IBOutlet weak var nameLabel: UILabel!
-  
-  @IBOutlet weak var homePlanetLabel: UILabel!
   
   @IBOutlet weak var heightLabel: UILabel!
   
@@ -14,44 +23,99 @@ class CharacterDetailedController: UIViewController {
   
   @IBOutlet weak var hairColorLabel: UILabel!
   
-  @IBOutlet weak var vehicleTableView: UITableView!
-  
   @IBOutlet weak var createdOnLabel: UILabel!
+  
+  @IBOutlet weak var moviesLabel: UILabel!
+  
+  @IBOutlet weak var moviesCollectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUpTableView()
-    setUpUI()
+    configureCollection()
+    getMovieData()
+    setupUI()
   }
   
-  func setUpTableView(){
-    vehicleTableView.delegate = self
-    vehicleTableView.dataSource = self
+  func getMovieData (){
+    MovieAPIClient.getMovieInfo(keyword: endPoint, pageNumber: pageNumber){(error, data) in
+      DispatchQueue.main.async {
+        if let error = error{
+          print(error)
+        }
+        if let data = data {
+          self.movies = data
+          self.pageNumber += 1
+        }
+      }
+    }
   }
   
-  func setUpUI() {
-    title = "Profile"
-    nameLabel.text = currentCharacter.name
-    homePlanetLabel.text = currentCharacter.homeworld
+  func setupUI(){
+    backGroundImage.image = UIImage(named: "deathStar")
+    nameLabel.text = currentCharacter.name.uppercased()
     heightLabel.text = "Height: \(currentCharacter.height) cm."
-    eyeColorLabel.text = "Eye color: \(currentCharacter.eye_color)"
-    hairColorLabel.text = "Hair color: \(currentCharacter.hair_color)"
-    let date  = currentCharacter.created.date()
-    createdOnLabel.text = "Database entry created on: \(date)"
+    eyeColorLabel.text = "Eye color: \(currentCharacter.eye_color)."
+    hairColorLabel.text = "Hair color: \(currentCharacter.hair_color)."
+    moviesLabel.text = "Movies \(currentCharacter.name) appears in:"
+    let date = currentCharacter.created.date()
+    createdOnLabel.text = "\(date)"
+    
   }
-
+  
+  func configureCollection(){
+    moviesCollectionView.dataSource = self
+    moviesCollectionView.delegate = self
+    let layout = self.moviesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    layout.minimumInteritemSpacing = 5
+    layout.itemSize = CGSize(width: (self.moviesCollectionView.frame.size.width - 20)/2, height: self.moviesCollectionView.frame.size.height/3)
+    moviesCollectionView.backgroundColor = .black
+  }
 }
 
-extension CharacterDetailedController: UITableViewDelegate, UITableViewDataSource {
+extension CharacterDetailedController: UICollectionViewDataSource {
   
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return currentCharacter.starships.count
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return movies.count
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = vehicleTableView.dequeueReusableCell(withIdentifier: "vehicleShipCell", for: indexPath)
-    let currentVehicle = currentCharacter.starships[indexPath.row]
-    cell.textLabel?.text = currentVehicle
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell else {return UICollectionViewCell()}
+    
+    let currentMovie = movies[indexPath.row]
+    
+    if let foundFilmTitle = currentMovie.title, let image = returnAPoster(movieName: foundFilmTitle){
+      cell.categoryImage.image = image
+    }
+    
+    cell.layer.cornerRadius = 5.0
+    cell.layer.borderColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.layer.borderWidth = 1.0
+    
     return cell
+  }
+  
+  func returnAPoster(movieName: String) -> UIImage? {
+    var image = UIImage()
+    let formattedString = movieName.replacingOccurrences(of: " ", with: "").lowercased()
+    for value in MoviePoster.allCases {
+      if value.rawValue == formattedString {
+        if let foundImage = UIImage(named: value.rawValue){
+          image = foundImage
+        }
+      }
+    }
+    return image
+  }
+}
+
+extension CharacterDetailedController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 240, height: 240)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let currentMovie = movies[indexPath.row]
+    
   }
 }
