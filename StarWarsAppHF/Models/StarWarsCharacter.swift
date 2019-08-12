@@ -15,6 +15,7 @@ struct StarWarsCharacter: Codable {
   let skin_color: String
   let eye_color: String
   let homeworld: String
+  let birth_year: String 
   let films: [String]
   let vehicles: [String]
   let starships: [String]

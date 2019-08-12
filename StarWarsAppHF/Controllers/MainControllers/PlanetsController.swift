@@ -24,6 +24,7 @@ class PlanetsController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Planets"
     setUpTableView()
     getPlanetData()
   }
@@ -69,7 +70,7 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
     cell.textLabel?.text = currentPlanet.name
     cell.backgroundColor = .black
     cell.textLabel?.textAlignment = .center
-    cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.textLabel?.textColor = #colorLiteral(red: 0.996571362, green: 0.9003907442, blue: 0.02927687764, alpha: 1)
     cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 20)
     cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
     return cell

@@ -1,12 +1,15 @@
 import Foundation
 
 extension String {
-  public func date() -> Date {
-    var date = Date()
-    let isoDateFormatter = ISO8601DateFormatter()
-    if let isoDate = isoDateFormatter.date(from: self) {
-      date = isoDate
+  public func dateFormatAdjustment(dateString: String) -> String {
+    var formatDate = self
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+    if let date = formatter.date(from: self) {
+      formatter.locale = Locale(identifier: "en_US_POSIX")
+      formatter.dateFormat = dateString
+      formatDate = formatter.string(from: date)
     }
-    return date
+    return formatDate
   }
 }

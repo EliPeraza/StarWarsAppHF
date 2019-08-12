@@ -67,7 +67,7 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
     let cell = characterTableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
     let currentCharacter = storeCalledData[indexPath.row]
     cell.textLabel?.text = currentCharacter.name
-    cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.textLabel?.textColor = #colorLiteral(red: 0.996571362, green: 0.9003907442, blue: 0.02927687764, alpha: 1)
     cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 20)
     cell.textLabel?.textAlignment = .center
     cell.backgroundColor = .black

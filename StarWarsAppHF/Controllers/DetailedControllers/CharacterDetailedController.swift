@@ -13,6 +13,8 @@ class CharacterDetailedController: UIViewController {
     }
   }
   
+  
+  @IBOutlet weak var birthYearLbel: UILabel!
   @IBOutlet weak var backGroundImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var heightLabel: UILabel!
@@ -45,13 +47,13 @@ class CharacterDetailedController: UIViewController {
   
   func setupUI(){
     backGroundImage.image = UIImage(named: "deathStar")
+    birthYearLbel.text = "Birth year: \(currentCharacter.birth_year)"
     nameLabel.text = currentCharacter.name.uppercased()
     heightLabel.text = "Height: \(currentCharacter.height) cm."
     eyeColorLabel.text = "Eye color: \(currentCharacter.eye_color)."
     hairColorLabel.text = "Hair color: \(currentCharacter.hair_color)."
     moviesLabel.text = "Movies \(currentCharacter.name) appears in:"
-    let date = currentCharacter.created.date()
-    createdOnLabel.text = "\(date)"
+    createdOnLabel.text = "Date: \(currentCharacter.created.dateFormatAdjustment(dateString: currentCharacter.created))"
   }
   
   func configureCollection(){
