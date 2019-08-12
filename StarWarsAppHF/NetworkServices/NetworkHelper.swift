@@ -2,17 +2,14 @@ import Foundation
 
 final class NetworkHelper {
   private init() {}
-  
   static let shared = NetworkHelper()
   
   public func getStarWarsData(endPointURLString: String, completion: @escaping (Data?, AppError?) -> Void) {
     let endPointURL = "https://swapi.co/api/\(endPointURLString)/"
-    
     guard let url = URL(string: endPointURL) else {
       completion(nil, AppError.badURL(endPointURL))
       return
     }
-    
     let request = URLRequest(url: url)
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
       if let error = error {

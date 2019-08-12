@@ -4,7 +4,6 @@ struct CharacterAPIClient {
   
   static func getCharacterInfo (category:String, pageNumber: Int, completionHandler: @escaping (AppError?, [StarWarsCharacter]?) -> Void) {
     let urlString = "https://swapi.co/api/\(category)/?page=\(pageNumber)"
-    
     guard let url = URL(string: urlString) else {
       completionHandler(AppError.badURL("malformatted URL"), nil)
       return

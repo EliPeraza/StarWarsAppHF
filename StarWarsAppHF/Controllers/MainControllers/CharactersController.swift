@@ -3,14 +3,11 @@ import UIKit
 class CharactersController: UIViewController {
   
   @IBOutlet weak var characterTableView: UITableView!
-  
   @IBOutlet weak var logo: UIImageView!
-  
   
   var pageNumber = 1
   var isFetching = false
   let endPoint = StarWarsEndPoints.people.rawValue
-  
   var storeCalledData = [StarWarsCharacter]() {
     didSet {
       DispatchQueue.main.async {
@@ -59,17 +56,7 @@ class CharactersController: UIViewController {
       }
     }
   }
-  
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    guard let indexPath = characterTableView.indexPathForSelectedRow,
-//      let detailedPoepleController = segue.destination as? CharacterDetailedController else {fatalError("Error with segue")}
-//
-//    let currentMovie = storeCalledData[indexPath.row]
-//    detailedPoepleController.currentCharacter = currentMovie
-//  }
-  
 }
-
 
 extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,13 +65,13 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = characterTableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
-    
     let currentCharacter = storeCalledData[indexPath.row]
     cell.textLabel?.text = currentCharacter.name
     cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 20)
+    cell.textLabel?.textAlignment = .center
     cell.backgroundColor = .black
     cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    
     return cell
   }
   
@@ -105,13 +92,13 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-      guard let detailedCharacterController = storyboard.instantiateViewController(withIdentifier: "CharacterDetailedController") as? CharacterDetailedController else {return}
-      
-      detailedCharacterController.modalPresentationStyle = .overCurrentContext
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    guard let detailedCharacterController = storyboard.instantiateViewController(withIdentifier: "CharacterDetailedController") as? CharacterDetailedController else {return}
+    
+    detailedCharacterController.modalPresentationStyle = .overCurrentContext
     detailedCharacterController.currentCharacter = storeCalledData[indexPath.row]
-      present(detailedCharacterController, animated: true, completion: nil)
-      
+    present(detailedCharacterController, animated: true, completion: nil)
+    
     
   }
 }

@@ -14,19 +14,12 @@ class CharacterDetailedController: UIViewController {
   }
   
   @IBOutlet weak var backGroundImage: UIImageView!
-  
   @IBOutlet weak var nameLabel: UILabel!
-  
   @IBOutlet weak var heightLabel: UILabel!
-  
   @IBOutlet weak var eyeColorLabel: UILabel!
-  
   @IBOutlet weak var hairColorLabel: UILabel!
-  
   @IBOutlet weak var createdOnLabel: UILabel!
-  
   @IBOutlet weak var moviesLabel: UILabel!
-  
   @IBOutlet weak var moviesCollectionView: UICollectionView!
   
   override func viewDidLoad() {
@@ -59,7 +52,6 @@ class CharacterDetailedController: UIViewController {
     moviesLabel.text = "Movies \(currentCharacter.name) appears in:"
     let date = currentCharacter.created.date()
     createdOnLabel.text = "\(date)"
-    
   }
   
   func configureCollection(){
@@ -86,17 +78,13 @@ extension CharacterDetailedController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell else {return UICollectionViewCell()}
-    
     let currentMovie = movies[indexPath.row]
-    
     if let foundFilmTitle = currentMovie.title, let image = returnAPoster(movieName: foundFilmTitle){
       cell.categoryImage.image = image
     }
-    
     cell.layer.cornerRadius = 5.0
     cell.layer.borderColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
     cell.layer.borderWidth = 1.0
-    
     return cell
   }
   

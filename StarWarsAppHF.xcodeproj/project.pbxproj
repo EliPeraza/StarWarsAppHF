@@ -27,9 +27,6 @@
 		1EDF5E7D22FF3A7600F4681D /* PlanetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E7C22FF3A7600F4681D /* PlanetsController.swift */; };
 		1EDF5E7E22FF3A7600F4681D /* PlanetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E7C22FF3A7600F4681D /* PlanetsController.swift */; };
 		1EDF5E7F22FF3A7600F4681D /* PlanetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E7C22FF3A7600F4681D /* PlanetsController.swift */; };
-		1EDF5E8122FF3AB000F4681D /* MovieDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */; };
-		1EDF5E8222FF3AB000F4681D /* MovieDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */; };
-		1EDF5E8322FF3AB000F4681D /* MovieDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */; };
 		1EDF5E8522FF3AC200F4681D /* CharacterDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */; };
 		1EDF5E8622FF3AC200F4681D /* CharacterDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */; };
 		1EDF5E8722FF3AC200F4681D /* CharacterDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */; };
@@ -88,7 +85,6 @@
 		1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E7822FF3A5800F4681D /* CharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersController.swift; sourceTree = "<group>"; };
 		1EDF5E7C22FF3A7600F4681D /* PlanetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsController.swift; sourceTree = "<group>"; };
-		1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailedController.swift; sourceTree = "<group>"; };
 		1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailedController.swift; sourceTree = "<group>"; };
 		1EDF5E8822FF3ADD00F4681D /* PlanetDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailedController.swift; sourceTree = "<group>"; };
 		1EDF5E8E22FF3CF200F4681D /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -239,7 +235,6 @@
 		1EDF5E9222FF3F8300F4681D /* DetailedControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */,
 				1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */,
 				1EDF5E8822FF3ADD00F4681D /* PlanetDetailedController.swift */,
 			);
@@ -548,7 +543,6 @@
 				1EDF5E9F22FF432300F4681D /* Movie.swift in Sources */,
 				1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */,
 				1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */,
-				1EDF5E8122FF3AB000F4681D /* MovieDetailedController.swift in Sources */,
 				1EDF5E7D22FF3A7600F4681D /* PlanetsController.swift in Sources */,
 				1EDF5E7922FF3A5800F4681D /* CharactersController.swift in Sources */,
 				1EDF5EAA22FF799200F4681D /* PlanetAPIClient.swift in Sources */,
@@ -570,7 +564,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EDF5E8222FF3AB000F4681D /* MovieDetailedController.swift in Sources */,
 				1EDF5E7E22FF3A7600F4681D /* PlanetsController.swift in Sources */,
 				1EDF5E7A22FF3A5800F4681D /* CharactersController.swift in Sources */,
 				1EA503F422FE6142006D2C8D /* StarWarsAppHFTests.swift in Sources */,
@@ -583,7 +576,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EDF5E8322FF3AB000F4681D /* MovieDetailedController.swift in Sources */,
 				1EDF5E7F22FF3A7600F4681D /* PlanetsController.swift in Sources */,
 				1EDF5E7B22FF3A5800F4681D /* CharactersController.swift in Sources */,
 				1EA503FF22FE6142006D2C8D /* StarWarsAppHFUITests.swift in Sources */,

@@ -7,7 +7,6 @@ class PlanetsController: UIViewController {
   var pageNumber = 1
   var isFetching = false
   let endPoint = StarWarsEndPoints.planets.rawValue
-  
   var storedPlanetsData = [StarWarsPlanet]() {
     didSet {
       DispatchQueue.main.async {
@@ -15,7 +14,6 @@ class PlanetsController: UIViewController {
       }
     }
   }
-  
   var starwarsPlanets = [StarWarsPlanet]() {
     didSet {
       DispatchQueue.main.async {
@@ -44,6 +42,7 @@ class PlanetsController: UIViewController {
         if let planetData = data {
           self.starwarsPlanets = planetData
           self.storedPlanetsData.append(contentsOf: self.starwarsPlanets)
+          dump(self.storedPlanetsData)
           self.pageNumber += 1
           self.isFetching = false
         }
@@ -54,7 +53,6 @@ class PlanetsController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let indexPath = planetsTableView.indexPathForSelectedRow,
       let detailedPlanetController = segue.destination as? PlanetDetailedController else {fatalError("Error with segue")}
-    
     let currentPlanet = storedPlanetsData[indexPath.row]
     detailedPlanetController.planetSelectedInList = currentPlanet
   }
@@ -67,18 +65,15 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = planetsTableView.dequeueReusableCell(withIdentifier: "PlanetCell", for: indexPath)
-    
     let currentPlanet = storedPlanetsData[indexPath.row]
-    
     cell.textLabel?.text = currentPlanet.name
     cell.backgroundColor = .black
+    cell.textLabel?.textAlignment = .center
     cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.textLabel?.font = UIFont(name: "HiraKakuProN-W3", size: 20)
     cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
     return cell
-    
   }
-  
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let offSetY = scrollView.contentOffset.y
@@ -95,9 +90,4 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
     self.getPlanetData()
     self.planetsTableView.reloadData()
   }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-  }
-  
 }
