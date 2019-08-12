@@ -55,6 +55,11 @@ extension MoviesController: UICollectionViewDataSource {
     let currentMovie = movies[indexPath.row]
     
     cell.movieName.text = currentMovie.title
+    cell.movieName.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+
+    if let foundFilmTitle = currentMovie.title, let image = returnAPoster(movieName: foundFilmTitle){
+      cell.categoryImage.image = image
+    }
     
     cell.layer.cornerRadius = 5.0
     cell.layer.borderColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
@@ -62,6 +67,20 @@ extension MoviesController: UICollectionViewDataSource {
     
     return cell
   }
+  
+  func returnAPoster(movieName: String) -> UIImage? {
+    var image = UIImage()
+    let formattedString = movieName.replacingOccurrences(of: " ", with: "").lowercased()
+    for value in MoviePoster.allCases {
+      if value.rawValue == formattedString {
+        if let foundImage = UIImage(named: value.rawValue){
+          image = foundImage
+        }
+      }
+    }
+    return image
+  }
+  
 }
 
 extension MoviesController: UICollectionViewDelegateFlowLayout {
@@ -74,10 +93,10 @@ extension MoviesController: UICollectionViewDelegateFlowLayout {
     guard let cell = moviesCollectionView.cellForItem(at: indexPath) as? MovieCell else { print("didSelectItemAt cell is nill")
       return
     }
-    
     let detailedVC = MovieDetailedController()
     detailedVC.movieCrawl = currentMovie.opening_crawl
-    
+    detailedVC.movie = currentMovie
+    detailedVC.moviePoster.image = cell.categoryImage.image
     navigationController?.pushViewController(detailedVC, animated: true)
     
   }

@@ -51,6 +51,13 @@ class PlanetsController: UIViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = planetsTableView.indexPathForSelectedRow,
+      let detailedPlanetController = segue.destination as? PlanetDetailedController else {fatalError("Error with segue")}
+    
+    let currentPlanet = storedPlanetsData[indexPath.row]
+    detailedPlanetController.planetSelectedInList = currentPlanet
+  }
 }
 
 extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
@@ -64,7 +71,10 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
     let currentPlanet = storedPlanetsData[indexPath.row]
     
     cell.textLabel?.text = currentPlanet.name
-    
+    cell.backgroundColor = .black
+    cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+
     return cell
     
   }

@@ -33,6 +33,7 @@ class CharactersController: UIViewController {
   func setUpTableViews() {
     characterTableView.delegate = self
     characterTableView.dataSource = self
+    characterTableView.backgroundColor = .black
   }
   
   func getCharacterData (){
@@ -51,16 +52,13 @@ class CharactersController: UIViewController {
     }
   }
   
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if segue.identifier == "CharactersDetailedSegue" {
-//        guard let indexPath = sender as? IndexPath,
-//          let charcatersDetailedVC = segue.destination as? CharacterDetailedController else {
-//       fatalError("cannot segue to Characters Detailed View Controller")
-//      }
-//      let currentCharacter = storeCalledData[indexPath.row]
-//      charcatersDetailedVC.currentStarWarsCharacter = currentCharacter
-//    }
-//  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = characterTableView.indexPathForSelectedRow,
+      let detailedPoepleController = segue.destination as? CharacterDetailedController else {fatalError("Error with segue")}
+    
+    let currentMovie = storeCalledData[indexPath.row]
+    detailedPoepleController.currentCharacter = currentMovie
+  }
   
 }
 
@@ -75,7 +73,8 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
     
     let currentCharacter = storeCalledData[indexPath.row]
     cell.textLabel?.text = currentCharacter.name
-    
+    cell.textLabel?.textColor = #colorLiteral(red: 0.9702786803, green: 0.6991387606, blue: 0.1337638199, alpha: 1)
+    cell.backgroundColor = .black
     cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
     
     return cell
@@ -95,14 +94,5 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
     isFetching = true
     self.getCharacterData()
     self.characterTableView.reloadData()
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let detailedViewController = CharacterDetailedController()
-    let currentCharacter = storeCalledData[indexPath.row]
-    detailedViewController.currentStarWarsCharacter = currentCharacter
-    detailedViewController.name = currentCharacter.name
-    
-    navigationController?.pushViewController(detailedViewController, animated: true)
   }
 }

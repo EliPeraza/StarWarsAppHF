@@ -1,8 +1,8 @@
 import UIKit
 
 class CharacterDetailedController: UIViewController {
-
-  var name: String = "Anonymous"
+  
+  public var currentCharacter: StarWarsCharacter!
   
   @IBOutlet weak var nameLabel: UILabel!
   
@@ -16,18 +16,49 @@ class CharacterDetailedController: UIViewController {
   
   @IBOutlet weak var vehicleTableView: UITableView!
   
-  var currentStarWarsCharacter: StarWarsCharacter?
+  @IBOutlet weak var createdOnLabel: UILabel!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpTableView()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpTableView()
+    setUpUI()
+  }
   
   func setUpTableView(){
-    title = "Profile"
-    nameLabel.text = name 
-   
+    vehicleTableView.delegate = self
+    vehicleTableView.dataSource = self
   }
+  
+  func setUpUI() {
+    title = "Profile"
+    nameLabel.text = currentCharacter.name
+    homePlanetLabel.text = currentCharacter.homeworld
+    heightLabel.text = "Height: \(currentCharacter.height) cm."
+    eyeColorLabel.text = "Eye color: \(currentCharacter.eye_color)"
+    hairColorLabel.text = "Hair color: \(currentCharacter.hair_color)"
+    let date  = currentCharacter.created.date()
+    createdOnLabel.text = "Database entry created on: \(date)"
+  }
+  
+//  func findHomeWorld(arrayOfPlanet: [StarWarsPlanet.PlanetInfo], urlString: String) -> String {
+//    var planetName = ""
+//    for planet in arrayOfPlanet {
+//      print(planet)
+//    }
+//    return planetName
+//  }
+}
 
-
+extension CharacterDetailedController: UITableViewDelegate, UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return currentCharacter.starships.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = vehicleTableView.dequeueReusableCell(withIdentifier: "vehicleShipCell", for: indexPath)
+    let currentVehicle = currentCharacter.starships[indexPath.row]
+    cell.textLabel?.text = currentVehicle
+    return cell
+  }
 }

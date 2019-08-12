@@ -16,7 +16,6 @@ struct PlanetAPIClient{
         do {
           
           let searchData = try JSONDecoder().decode(StarWarsPlanet.PlanetInfo.self, from: data)
-          
           completionHandler(nil, searchData.results)
         } catch {
           completionHandler(AppError.jsonDecodingError(error), nil)

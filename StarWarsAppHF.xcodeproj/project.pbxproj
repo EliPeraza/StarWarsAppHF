@@ -15,6 +15,8 @@
 		1EA503F422FE6142006D2C8D /* StarWarsAppHFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503F322FE6142006D2C8D /* StarWarsAppHFTests.swift */; };
 		1EA503FF22FE6142006D2C8D /* StarWarsAppHFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */; };
 		1ED658342300AA5E00AD2BC7 /* StarWarsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED658332300AA5E00AD2BC7 /* StarWarsAPIClient.swift */; };
+		1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6583523011F1600AD2BC7 /* MoviePoster.swift */; };
+		1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */; };
 		1EDF5E6C22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6D22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6E22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
@@ -87,6 +89,8 @@
 		1EA503FA22FE6142006D2C8D /* StarWarsAppHFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsAppHFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAppHFUITests.swift; sourceTree = "<group>"; };
 		1ED658332300AA5E00AD2BC7 /* StarWarsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPIClient.swift; sourceTree = "<group>"; };
+		1ED6583523011F1600AD2BC7 /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
+		1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
 		1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E7422FF3A1F00F4681D /* MoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				1EDF5E9822FF421E00F4681D /* NetworkServices */,
 				1EDF5EA022FF432900F4681D /* Models */,
 				1EDF5E9B22FF42B900F4681D /* APIClient */,
+				1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */,
 			);
 			path = StarWarsAppHF;
 			sourceTree = "<group>";
@@ -244,9 +249,9 @@
 		1EDF5E9222FF3F8300F4681D /* DetailedControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1EDF5E8822FF3ADD00F4681D /* PlanetDetailedController.swift */,
-				1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */,
 				1EDF5E8022FF3AB000F4681D /* MovieDetailedController.swift */,
+				1EDF5E8422FF3AC200F4681D /* CharacterDetailedController.swift */,
+				1EDF5E8822FF3ADD00F4681D /* PlanetDetailedController.swift */,
 			);
 			path = DetailedControllers;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 		1EDF5EA022FF432900F4681D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1ED6583523011F1600AD2BC7 /* MoviePoster.swift */,
 				1EDF5E9E22FF432300F4681D /* Movie.swift */,
 				1EDF5EA122FF435600F4681D /* StarWarsCharacter.swift */,
 				1EDF5EA322FF435E00F4681D /* Planet.swift */,
@@ -551,6 +557,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EDF5E9F22FF432300F4681D /* Movie.swift in Sources */,
+				1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */,
+				1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */,
 				1EDF5E8122FF3AB000F4681D /* MovieDetailedController.swift in Sources */,
 				1EA503E122FE613F006D2C8D /* ViewController.swift in Sources */,
 				1EDF5E7D22FF3A7600F4681D /* PlanetsController.swift in Sources */,
