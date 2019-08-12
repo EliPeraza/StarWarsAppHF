@@ -71,6 +71,11 @@ class CharacterDetailedController: UIViewController {
     layout.itemSize = CGSize(width: (self.moviesCollectionView.frame.size.width - 20)/2, height: self.moviesCollectionView.frame.size.height/3)
     moviesCollectionView.backgroundColor = .black
   }
+  
+  @IBAction func backButton(_ sender: UIButton) {
+    dismiss(animated: true, completion: nil)
+  }
+  
 }
 
 extension CharacterDetailedController: UICollectionViewDataSource {
@@ -112,10 +117,5 @@ extension CharacterDetailedController: UICollectionViewDataSource {
 extension CharacterDetailedController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: 240, height: 240)
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let currentMovie = movies[indexPath.row]
-    
   }
 }

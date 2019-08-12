@@ -22,6 +22,8 @@ class PlanetDetailedController: UIViewController {
     }
     
   func setUpView() {
+    title = "\(planetSelectedInList.name)"
+    
     let date = planetSelectedInList.created.date()
     createdOn.text = "Database entry created on: \(date)"
     climateLabel.text = "Climate:"
