@@ -50,7 +50,20 @@ class CharactersController: UIViewController {
       }
     }
   }
+  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if segue.identifier == "CharactersDetailedSegue" {
+//        guard let indexPath = sender as? IndexPath,
+//          let charcatersDetailedVC = segue.destination as? CharacterDetailedController else {
+//       fatalError("cannot segue to Characters Detailed View Controller")
+//      }
+//      let currentCharacter = storeCalledData[indexPath.row]
+//      charcatersDetailedVC.currentStarWarsCharacter = currentCharacter
+//    }
+//  }
+  
 }
+
 
 extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,5 +95,14 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
     isFetching = true
     self.getCharacterData()
     self.characterTableView.reloadData()
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let detailedViewController = CharacterDetailedController()
+    let currentCharacter = storeCalledData[indexPath.row]
+    detailedViewController.currentStarWarsCharacter = currentCharacter
+    detailedViewController.name = currentCharacter.name
+    
+    navigationController?.pushViewController(detailedViewController, animated: true)
   }
 }

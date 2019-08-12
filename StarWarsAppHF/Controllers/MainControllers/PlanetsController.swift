@@ -86,4 +86,8 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
     self.planetsTableView.reloadData()
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+  }
+  
 }

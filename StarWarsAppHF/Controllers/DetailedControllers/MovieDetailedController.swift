@@ -2,7 +2,7 @@ import UIKit
 
 class MovieDetailedController: UIViewController {
   
-  var currentMovie: StarWarsMovie!
+  public var movieCrawl: String?
   
   @IBOutlet weak var moviePoster: UIImageView!
   @IBOutlet weak var movieDescription: UITextView!
@@ -14,8 +14,7 @@ class MovieDetailedController: UIViewController {
   }
   
   func setDetailedView() {
-    if let movie = currentMovie {
-     movieDescription.text = movie.director
-    }
+ 
   }
+ 
 }

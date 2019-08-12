@@ -14,7 +14,6 @@ class MoviesController: UIViewController {
     }
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollection()
@@ -71,14 +70,15 @@ extension MoviesController: UICollectionViewDelegateFlowLayout {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let currentMovie = movies[indexPath.row]
+    guard let cell = moviesCollectionView.cellForItem(at: indexPath) as? MovieCell else { print("didSelectItemAt cell is nill")
+      return
+    }
     
-    let movieToSegue = movies[indexPath.row]
+    let detailedVC = MovieDetailedController()
+    detailedVC.movieCrawl = currentMovie.opening_crawl
     
-    let movieDetailedController = MovieDetailedController()
-    
-    movieDetailedController.currentMovie = movieToSegue
-    
-    navigationController?.pushViewController(movieDetailedController, animated: true)
+    navigationController?.pushViewController(detailedVC, animated: true)
     
   }
 }

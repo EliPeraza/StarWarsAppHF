@@ -1,6 +1,5 @@
 import Foundation
 
-
 struct PlanetAPIClient{
   
   static func getPlanetInfo(keyword:String, pageNumber: Int, completionHandler: @escaping (AppError?, [StarWarsPlanet]?) -> Void) {
