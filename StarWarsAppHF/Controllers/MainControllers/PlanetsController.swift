@@ -117,8 +117,14 @@ extension PlanetsController: UISearchBarDelegate {
     }
     getUserSearch(searchedText: searchText)
     planetsTableView.reloadData()
-    if searchText.isEmpty{
-      self.storedPlanetsData = self.starwarsPlanets
+  }
+  
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    guard let searchText = searchBar.text?.lowercased() else {
+     return
+    }
+    if searchText.isEmpty {
+     self.storedPlanetsData = self.starwarsPlanets
       planetsTableView.reloadData()
     }
   }
