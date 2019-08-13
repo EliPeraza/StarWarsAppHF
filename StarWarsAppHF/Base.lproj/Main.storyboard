@@ -75,16 +75,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkp-JB-ROR">
                                 <rect key="frame" x="20" y="124" width="374" height="695"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-6x-Qkp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-6x-Qkp">
                                         <rect key="frame" x="40" y="30" width="294" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PfC-cb-e9y"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
                                         <color key="textColor" red="0.98046797513961792" green="0.90375560522079468" blue="0.30567765235900879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-U9-dbW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-U9-dbW">
                                         <rect key="frame" x="15" y="75" width="329" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -232,7 +232,9 @@
                                     <constraint firstAttribute="width" constant="50" id="Ydf-bK-Vbt"/>
                                     <constraint firstAttribute="height" constant="30" id="jrU-c3-JTd"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.98046797510000006" green="0.90375560519999998" blue="0.3056776524" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="backButton:" destination="Cqf-F6-7JL" eventType="touchUpInside" id="DcJ-0r-H7b"/>
                                 </connections>
@@ -541,7 +543,7 @@
         <scene sceneID="exr-Aj-wKb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dm4-LG-N38" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" id="gsm-gZ-OXd"/>
+                    <tabBarItem key="tabBarItem" title="People" image="iconC3PO" selectedImage="iconC3PO" id="gsm-gZ-OXd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EeT-6G-uey">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -560,11 +562,15 @@
         <scene sceneID="WxM-Ka-rdf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dUv-Zy-hIM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Planets" id="1Zq-zy-K7V"/>
+                    <tabBarItem key="tabBarItem" title="Planets" image="deathStarIcon" selectedImage="deathStarIcon" id="1Zq-zy-K7V"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FQG-iP-3pN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -577,6 +583,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="deathStarIcon" width="32" height="32"/>
+        <image name="iconC3PO" width="40" height="40"/>
         <image name="milleniumFalcon" width="1280" height="2120"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -15,6 +15,7 @@
 		1EA503FF22FE6142006D2C8D /* StarWarsAppHFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */; };
 		1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6583523011F1600AD2BC7 /* MoviePoster.swift */; };
 		1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */; };
+		1ED6583A2302277E00AD2BC7 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED658392302277D00AD2BC7 /* IBDesignable.swift */; };
 		1EDF5E6C22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6D22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6E22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
@@ -81,6 +82,7 @@
 		1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAppHFUITests.swift; sourceTree = "<group>"; };
 		1ED6583523011F1600AD2BC7 /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
+		1ED658392302277D00AD2BC7 /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
 		1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E7822FF3A5800F4681D /* CharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersController.swift; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 				1EDF5E9822FF421E00F4681D /* NetworkServices */,
 				1EDF5EA022FF432900F4681D /* Models */,
 				1EDF5E9B22FF42B900F4681D /* APIClient */,
-				1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */,
+				1ED6583B2302279300AD2BC7 /* Extensions */,
 			);
 			path = StarWarsAppHF;
 			sourceTree = "<group>";
@@ -202,6 +204,15 @@
 				1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */,
 			);
 			path = StarWarsAppHFUITests;
+			sourceTree = "<group>";
+		};
+		1ED6583B2302279300AD2BC7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */,
+				1ED658392302277D00AD2BC7 /* IBDesignable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1EDF5E7322FF34C300F4681D /* SupportingFiles */ = {
@@ -554,6 +565,7 @@
 				1EA503DF22FE613F006D2C8D /* AppDelegate.swift in Sources */,
 				1EDF5EA422FF435E00F4681D /* Planet.swift in Sources */,
 				1EDF5E9D22FF42ED00F4681D /* MovieAPIClient.swift in Sources */,
+				1ED6583A2302277E00AD2BC7 /* IBDesignable.swift in Sources */,
 				1EDF5EA222FF435600F4681D /* StarWarsCharacter.swift in Sources */,
 				1EDF5EA622FF4CB300F4681D /* StarWarsEndPoints.swift in Sources */,
 				1EDF5E8F22FF3CF200F4681D /* MovieCell.swift in Sources */,

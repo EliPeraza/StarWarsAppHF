@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "lightSabers-2.jpg",
       "scale" : "2x"
     },
     {
@@ -36,8 +37,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "lightSabers-1.jpg",
       "scale" : "3x"
     },
     {
@@ -46,8 +48,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "lightSabers-4.jpg",
       "scale" : "2x"
     },
     {
@@ -76,8 +79,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "lightSabers-3.jpg",
       "scale" : "2x"
     },
     {
@@ -86,8 +90,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "lightSabers.jpg",
       "scale" : "1x"
     }
   ],
