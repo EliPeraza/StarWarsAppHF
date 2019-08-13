@@ -3,6 +3,7 @@ import UIKit
 class PlanetsController: UIViewController {
   
   @IBOutlet weak var planetsTableView: UITableView!
+  @IBOutlet weak var planetSearchBar: UISearchBar!
   
   var pageNumber = 1
   var isFetching = false
@@ -25,13 +26,14 @@ class PlanetsController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Planets"
-    setUpTableView()
+    setUpDelegates()
     getPlanetData()
   }
   
-  func setUpTableView() {
+  func setUpDelegates() {
     planetsTableView.delegate = self
     planetsTableView.dataSource = self
+    planetSearchBar.delegate = self
   }
   
   func getPlanetData (){
@@ -43,11 +45,24 @@ class PlanetsController: UIViewController {
         if let planetData = data {
           self.starwarsPlanets = planetData
           self.storedPlanetsData.append(contentsOf: self.starwarsPlanets)
-          dump(self.storedPlanetsData)
           self.pageNumber += 1
           self.isFetching = false
         }
       }
+    }
+  }
+  func getUserSearch(searchedText: String) {
+ PlanetAPIClient.userSearchForPlanet(category: endPoint, planetName: searchedText){(error, data) in
+        DispatchQueue.main.async {
+          if let error = error{
+            print(error)
+          }
+          if let planetData = data {
+            self.starwarsPlanets.append(contentsOf: self.storedPlanetsData)
+            self.storedPlanetsData = planetData
+            self.isFetching = false
+          }
+        }
     }
   }
   
@@ -91,4 +106,21 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
     self.getPlanetData()
     self.planetsTableView.reloadData()
   }
+}
+
+extension PlanetsController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    guard let searchText = searchBar.text?.lowercased(),
+      !searchText.isEmpty else {
+        return
+    }
+    getUserSearch(searchedText: searchText)
+    planetsTableView.reloadData()
+    if searchText.isEmpty{
+      self.storedPlanetsData = self.starwarsPlanets
+      planetsTableView.reloadData()
+    }
+  }
+
 }
