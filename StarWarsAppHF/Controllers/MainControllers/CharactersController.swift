@@ -26,6 +26,7 @@ class CharactersController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "People"
     setUpTableViews()
     getCharacterData()
     setupUI()
@@ -42,17 +43,15 @@ class CharactersController: UIViewController {
   }
   
   func getCharacterData (){
-    CharacterAPIClient.getCharacterInfo(category: endPoint, pageNumber: pageNumber){(error, data) in
-      DispatchQueue.main.async {
-        if let error = error{
-          print(error)
-        }
-        if let data = data {
-          self.starwarsCharacters = data
-          self.storeCalledData.append(contentsOf: self.starwarsCharacters)
-          self.pageNumber += 1
-          self.isFetching = false
-        }
+    CharacterAPIClient.getCharacterInfo(category: endPoint, pageNumber: pageNumber){[weak self] (error, data) in
+      if let error = error{
+        print(error)
+      }
+      if let data = data {
+        self?.starwarsCharacters = data
+        self!.storeCalledData.append(contentsOf: self!.starwarsCharacters)
+        self?.pageNumber += 1
+        self?.isFetching = false
       }
     }
   }
@@ -88,13 +87,11 @@ extension CharactersController: UITableViewDelegate, UITableViewDataSource {
   func fetchMoreCharacters() {
     isFetching = true
     self.getCharacterData()
-    self.characterTableView.reloadData()
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
     guard let detailedCharacterController = storyboard.instantiateViewController(withIdentifier: "CharacterDetailedController") as? CharacterDetailedController else {return}
-    
     detailedCharacterController.modalPresentationStyle = .overCurrentContext
     detailedCharacterController.currentCharacter = storeCalledData[indexPath.row]
     present(detailedCharacterController, animated: true, completion: nil)

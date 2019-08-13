@@ -3,7 +3,6 @@ import UIKit
 class PlanetsController: UIViewController {
   
   @IBOutlet weak var planetsTableView: UITableView!
-  @IBOutlet weak var planetSearchBar: UISearchBar!
   
   var pageNumber = 1
   var isFetching = false
@@ -33,36 +32,19 @@ class PlanetsController: UIViewController {
   func setUpDelegates() {
     planetsTableView.delegate = self
     planetsTableView.dataSource = self
-    planetSearchBar.delegate = self
   }
   
   func getPlanetData (){
-    PlanetAPIClient.getPlanetInfo(keyword: endPoint, pageNumber: pageNumber){(error, data) in
-      DispatchQueue.main.async {
-        if let error = error{
-          print(error)
-        }
-        if let planetData = data {
-          self.starwarsPlanets = planetData
-          self.storedPlanetsData.append(contentsOf: self.starwarsPlanets)
-          self.pageNumber += 1
-          self.isFetching = false
-        }
+    PlanetAPIClient.getPlanetInfo(keyword: endPoint, pageNumber: pageNumber){[weak self] (error, data) in
+      if let error = error{
+        print(error)
       }
-    }
-  }
-  func getUserSearch(searchedText: String) {
- PlanetAPIClient.userSearchForPlanet(category: endPoint, planetName: searchedText){(error, data) in
-        DispatchQueue.main.async {
-          if let error = error{
-            print(error)
-          }
-          if let planetData = data {
-            self.starwarsPlanets.append(contentsOf: self.storedPlanetsData)
-            self.storedPlanetsData = planetData
-            self.isFetching = false
-          }
-        }
+      if let planetData = data {
+        self?.starwarsPlanets = planetData
+        self?.storedPlanetsData.append(contentsOf: self?.starwarsPlanets ?? [])
+        self?.pageNumber += 1
+        self?.isFetching = false
+      }
     }
   }
   
@@ -104,29 +86,6 @@ extension PlanetsController: UITableViewDelegate, UITableViewDataSource {
   func fetchMorePlanets() {
     isFetching = true
     self.getPlanetData()
-    self.planetsTableView.reloadData()
   }
 }
 
-extension PlanetsController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    searchBar.resignFirstResponder()
-    guard let searchText = searchBar.text?.lowercased(),
-      !searchText.isEmpty else {
-        return
-    }
-    getUserSearch(searchedText: searchText)
-    planetsTableView.reloadData()
-  }
-  
-  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    guard let searchText = searchBar.text?.lowercased() else {
-     return
-    }
-    if searchText.isEmpty {
-     self.storedPlanetsData = self.starwarsPlanets
-      planetsTableView.reloadData()
-    }
-  }
-
-}

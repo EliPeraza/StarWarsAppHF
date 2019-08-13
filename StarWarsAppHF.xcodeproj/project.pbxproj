@@ -15,8 +15,6 @@
 		1EA503FF22FE6142006D2C8D /* StarWarsAppHFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */; };
 		1ED6583623011F1600AD2BC7 /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6583523011F1600AD2BC7 /* MoviePoster.swift */; };
 		1ED65838230192ED00AD2BC7 /* String+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */; };
-		1ED6583A2302277E00AD2BC7 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED658392302277D00AD2BC7 /* IBDesignable.swift */; };
-		1EDF5E6C22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6D22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E6E22FF272F00F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */; };
 		1EDF5E7022FF34B200F4681D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */; };
@@ -64,6 +62,160 @@
 			remoteGlobalIDString = 1EA503DA22FE613F006D2C8D;
 			remoteInfo = StarWarsAppHF;
 		};
+		1ED6585A2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67DB9E36AAC281988980C2FBD88BFE1A;
+			remoteInfo = "BoringSSL-GRPC";
+		};
+		1ED6585C2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 787AD4801E2916DDC5DFBBC97C07DB0E;
+			remoteInfo = FirebaseAuth;
+		};
+		1ED6585E2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13C65DCC0E201A4B9C07EDD0B9431B85;
+			remoteInfo = FirebaseCore;
+		};
+		1ED658602302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F38FDC6DB3F56660AA49BE1165DFA32A;
+			remoteInfo = FirebaseCoreDiagnostics;
+		};
+		1ED658622302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A5EE6333A37EF859DE549E51FF11D974;
+			remoteInfo = FirebaseFirestore;
+		};
+		1ED658642302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7C2AB8E066B4B399296D16251DC35B85;
+			remoteInfo = FirebaseInstanceID;
+		};
+		1ED658662302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A8A5FB9F7066C08FFE5B256D370B0A7;
+			remoteInfo = FirebaseStorage;
+		};
+		1ED658682302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AC5FA845B9C9C96F9F82E22BDCAB264C;
+			remoteInfo = GoogleDataTransport;
+		};
+		1ED6586A2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BAFEDBE01F9B04B1FB16EAEF639E5D56;
+			remoteInfo = GoogleDataTransportCCTSupport;
+		};
+		1ED6586C2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58D52A8304C44955376F64ED49D781FE;
+			remoteInfo = GoogleUtilities;
+		};
+		1ED6586E2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CB346E20EF1A9D0B74C1D9252D1727D4;
+			remoteInfo = "gRPC-C++";
+		};
+		1ED658702302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DF9A0F2B41920754222464E1848BD44A;
+			remoteInfo = "gRPC-C++-gRPCCertificates-Cpp";
+		};
+		1ED658722302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C3137BBD433E7980382326702643D2C4;
+			remoteInfo = "gRPC-Core";
+		};
+		1ED658742302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 690FCC062CAC2B271B7262D5C2BE7E7F;
+			remoteInfo = GTMSessionFetcher;
+		};
+		1ED658762302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F5BB56541711D84D328C856F474453C;
+			remoteInfo = Kingfisher;
+		};
+		1ED658782302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D28C920DAC044089D617C391B5C6A1D2;
+			remoteInfo = "leveldb-library";
+		};
+		1ED6587A2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B8FD11D1399CD5A87EC2990407FB48;
+			remoteInfo = nanopb;
+		};
+		1ED6587C2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6B2C52D2C621A8D50399D6E7FCF31ACD;
+			remoteInfo = "Pods-StarWarsAppHF";
+		};
+		1ED6587E2302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AA0E6DC4F6A2ECC6FDD1B9FB6A67AD4;
+			remoteInfo = "Pods-StarWarsAppHFTests";
+		};
+		1ED658802302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B683D369E5875CD51F9AF1E86D1572BC;
+			remoteInfo = "Pods-StarWarsAppHFUITests";
+		};
+		1ED658822302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A02ABC6354464A7D5A0355E600D306A4;
+			remoteInfo = Protobuf;
+		};
+		1ED658842302510C00AD2BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9476EEBB3D35659348636BA63CAC9CBB;
+			remoteInfo = Toucan;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +234,7 @@
 		1EA503FE22FE6142006D2C8D /* StarWarsAppHFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAppHFUITests.swift; sourceTree = "<group>"; };
 		1ED6583523011F1600AD2BC7 /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension.swift"; sourceTree = "<group>"; };
-		1ED658392302277D00AD2BC7 /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
+		1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		1EDF5E6B22FF272E00F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E6F22FF34B200F4681D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EDF5E7822FF3A5800F4681D /* CharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersController.swift; sourceTree = "<group>"; };
@@ -210,9 +362,38 @@
 			isa = PBXGroup;
 			children = (
 				1ED65837230192ED00AD2BC7 /* String+DateExtension.swift */,
-				1ED658392302277D00AD2BC7 /* IBDesignable.swift */,
+				1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1ED6583D2302510B00AD2BC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1ED6585B2302510C00AD2BC7 /* openssl_grpc.framework */,
+				1ED6585D2302510C00AD2BC7 /* FirebaseAuth.framework */,
+				1ED6585F2302510C00AD2BC7 /* FirebaseCore.framework */,
+				1ED658612302510C00AD2BC7 /* FirebaseCoreDiagnostics.framework */,
+				1ED658632302510C00AD2BC7 /* FirebaseFirestore.framework */,
+				1ED658652302510C00AD2BC7 /* FirebaseInstanceID.framework */,
+				1ED658672302510C00AD2BC7 /* FirebaseStorage.framework */,
+				1ED658692302510C00AD2BC7 /* GoogleDataTransport.framework */,
+				1ED6586B2302510C00AD2BC7 /* GoogleDataTransportCCTSupport.framework */,
+				1ED6586D2302510C00AD2BC7 /* GoogleUtilities.framework */,
+				1ED6586F2302510C00AD2BC7 /* grpcpp.framework */,
+				1ED658712302510C00AD2BC7 /* gRPCCertificates-Cpp.bundle */,
+				1ED658732302510C00AD2BC7 /* grpc.framework */,
+				1ED658752302510C00AD2BC7 /* GTMSessionFetcher.framework */,
+				1ED658772302510C00AD2BC7 /* Kingfisher.framework */,
+				1ED658792302510C00AD2BC7 /* leveldb.framework */,
+				1ED6587B2302510C00AD2BC7 /* nanopb.framework */,
+				1ED6587D2302510C00AD2BC7 /* Pods_StarWarsAppHF.framework */,
+				1ED6587F2302510C00AD2BC7 /* Pods_StarWarsAppHFTests.framework */,
+				1ED658812302510C00AD2BC7 /* Pods_StarWarsAppHFUITests.framework */,
+				1ED658832302510C00AD2BC7 /* Protobuf.framework */,
+				1ED658852302510C00AD2BC7 /* Toucan.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		1EDF5E7322FF34C300F4681D /* SupportingFiles */ = {
@@ -395,6 +576,12 @@
 			mainGroup = 1EA503D222FE613F006D2C8D;
 			productRefGroup = 1EA503DC22FE613F006D2C8D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1ED6583D2302510B00AD2BC7 /* Products */;
+					ProjectRef = 1ED6583C2302510B00AD2BC7 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1EA503DA22FE613F006D2C8D /* StarWarsAppHF */,
@@ -404,13 +591,169 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		1ED6585B2302510C00AD2BC7 /* openssl_grpc.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = openssl_grpc.framework;
+			remoteRef = 1ED6585A2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6585D2302510C00AD2BC7 /* FirebaseAuth.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseAuth.framework;
+			remoteRef = 1ED6585C2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6585F2302510C00AD2BC7 /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 1ED6585E2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658612302510C00AD2BC7 /* FirebaseCoreDiagnostics.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCoreDiagnostics.framework;
+			remoteRef = 1ED658602302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658632302510C00AD2BC7 /* FirebaseFirestore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseFirestore.framework;
+			remoteRef = 1ED658622302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658652302510C00AD2BC7 /* FirebaseInstanceID.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstanceID.framework;
+			remoteRef = 1ED658642302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658672302510C00AD2BC7 /* FirebaseStorage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseStorage.framework;
+			remoteRef = 1ED658662302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658692302510C00AD2BC7 /* GoogleDataTransport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransport.framework;
+			remoteRef = 1ED658682302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6586B2302510C00AD2BC7 /* GoogleDataTransportCCTSupport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransportCCTSupport.framework;
+			remoteRef = 1ED6586A2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6586D2302510C00AD2BC7 /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 1ED6586C2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6586F2302510C00AD2BC7 /* grpcpp.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = grpcpp.framework;
+			remoteRef = 1ED6586E2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658712302510C00AD2BC7 /* gRPCCertificates-Cpp.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "gRPCCertificates-Cpp.bundle";
+			remoteRef = 1ED658702302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658732302510C00AD2BC7 /* grpc.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = grpc.framework;
+			remoteRef = 1ED658722302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658752302510C00AD2BC7 /* GTMSessionFetcher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTMSessionFetcher.framework;
+			remoteRef = 1ED658742302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658772302510C00AD2BC7 /* Kingfisher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Kingfisher.framework;
+			remoteRef = 1ED658762302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658792302510C00AD2BC7 /* leveldb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = leveldb.framework;
+			remoteRef = 1ED658782302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6587B2302510C00AD2BC7 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 1ED6587A2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6587D2302510C00AD2BC7 /* Pods_StarWarsAppHF.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_StarWarsAppHF.framework;
+			remoteRef = 1ED6587C2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED6587F2302510C00AD2BC7 /* Pods_StarWarsAppHFTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_StarWarsAppHFTests.framework;
+			remoteRef = 1ED6587E2302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658812302510C00AD2BC7 /* Pods_StarWarsAppHFUITests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_StarWarsAppHFUITests.framework;
+			remoteRef = 1ED658802302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658832302510C00AD2BC7 /* Protobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Protobuf.framework;
+			remoteRef = 1ED658822302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1ED658852302510C00AD2BC7 /* Toucan.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Toucan.framework;
+			remoteRef = 1ED658842302510C00AD2BC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		1EA503D922FE613F006D2C8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1EA503E922FE6142006D2C8D /* LaunchScreen.storyboard in Resources */,
-				1EDF5E6C22FF272F00F4681D /* GoogleService-Info.plist in Resources */,
 				1EDF5E7022FF34B200F4681D /* GoogleService-Info.plist in Resources */,
 				1EA503E622FE6142006D2C8D /* Assets.xcassets in Resources */,
 				1EA503E422FE613F006D2C8D /* Main.storyboard in Resources */,
@@ -565,7 +908,6 @@
 				1EA503DF22FE613F006D2C8D /* AppDelegate.swift in Sources */,
 				1EDF5EA422FF435E00F4681D /* Planet.swift in Sources */,
 				1EDF5E9D22FF42ED00F4681D /* MovieAPIClient.swift in Sources */,
-				1ED6583A2302277E00AD2BC7 /* IBDesignable.swift in Sources */,
 				1EDF5EA222FF435600F4681D /* StarWarsCharacter.swift in Sources */,
 				1EDF5EA622FF4CB300F4681D /* StarWarsEndPoints.swift in Sources */,
 				1EDF5E8F22FF3CF200F4681D /* MovieCell.swift in Sources */,

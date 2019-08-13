@@ -18,11 +18,5 @@ target 'StarWarsAppHF' do
   end
 
    # Pods for FellowBloggerV2
-   pod 'Firebase/Core'
-   pod 'Firebase/Auth'
-   pod 'Firebase/Firestore'
-   pod 'Firebase/Storage'
-   pod 'Toucan', '~> 1.1'
-   pod 'Kingfisher', '~> 5.0'
 
 end

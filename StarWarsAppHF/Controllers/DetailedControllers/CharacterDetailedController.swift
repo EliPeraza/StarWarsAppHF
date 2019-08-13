@@ -32,14 +32,14 @@ class CharacterDetailedController: UIViewController {
   }
   
   func getMovieData (){
-    MovieAPIClient.getMovieInfo(keyword: endPoint, pageNumber: pageNumber){(error, data) in
+    MovieAPIClient.getMovieInfo(keyword: endPoint, pageNumber: pageNumber){ [weak self] (error, data) in
       DispatchQueue.main.async {
         if let error = error{
           print(error)
         }
         if let data = data {
-          self.movies = data
-          self.pageNumber += 1
+          self?.movies = data
+          self?.pageNumber += 1
         }
       }
     }
@@ -73,7 +73,6 @@ class CharacterDetailedController: UIViewController {
 }
 
 extension CharacterDetailedController: UICollectionViewDataSource {
-  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return movies.count
   }
