@@ -18,5 +18,5 @@ target 'StarWarsAppHF' do
   end
 
    # Pods for FellowBloggerV2
-   pod 'Firebase/Firestore'
+   
 end
